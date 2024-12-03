@@ -30,15 +30,15 @@ public class TrienKhaiThietBiService {
 
     // groupBy siteId
     Map<String, List<SiteIdLoaiRan>> groupBySiteId = siteIdLoaiRanList.stream()
+        .filter(s -> s.getSiteId() != null)
         .collect(Collectors.groupingBy(SiteIdLoaiRan::getSiteId));
 
     for (Map.Entry<String, List<SiteIdLoaiRan>> entry : groupBySiteId.entrySet()) {
-      TrienKhaiThietBi trienKhaiThietBi = trienKhaiThietBiList.stream()
+      List<TrienKhaiThietBi> trienKhaiThietBiFilterList = trienKhaiThietBiList.stream()
           .filter(t -> t.getSiteId() != null && t.getSiteId().equals(entry.getKey()))
-          .findFirst()
-          .orElse(null);
+          .toList();
 
-      if (trienKhaiThietBi != null) {
+      for (TrienKhaiThietBi trienKhaiThietBi : trienKhaiThietBiFilterList) {
         Date minDate = entry.getValue().stream()
             .map(SiteIdLoaiRan::getNgay)
             .filter(Objects::nonNull)
