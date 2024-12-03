@@ -1,0 +1,46 @@
+#server:
+#  port: 8087
+#  tomcat:
+#    max-http-form-post-size: 100MB
+#spring:
+#  jpa:
+#    hibernate:
+#      ddl-auto: none
+#      # ddl-auto: update
+#      show_sql: true
+#      format_sql: false
+#      dialect: org.hibernate.dialect.Oracle10gDialect
+#      temp:
+#        use_jdbc_metadata_defaults: false
+#    database-platform: org.hibernate.dialect.Oracle10gDialect
+#  datasource:
+#    url: jdbc:oracle:thin:@localhost:1521:ORCL
+#    username: QHM
+#    password: SUCCESS
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+##  sql:
+##    init:
+##      encoding: UTF-8
+###  jpa:
+###    show-sql: true
+###    open-in-view: true
+###    properties:
+###      hibernate:
+###        proc:
+###          param_null_passing: true
+###        query:
+###          in_clause_parameter_padding: true
+###        jdbc:
+###          batch_size: 1000
+###        order_inserts: false
+###        order_updates: false
+###        SQL: debug
+###        temp:
+###          use_jdbc_metadata_defaults: false
+###        dialect: org.hibernate.spatial.dialect.oracle.OracleSpatial10gDialect
+###        spatial:
+###          connection_finder: com.qasoftsolution.mobi.spatial.SpatialConnectionFinder
+###      database-platform: org.hibernate.dialect.Oracle10gDialect
+###    generate-ddl: false
+###    hibernate:
+###      ddl-auto: none
